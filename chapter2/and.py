@@ -1,9 +1,13 @@
 # coding: utf-8
 
+import numpy as np
+
 
 def AND(x1, x2):
-    w1, w2, theta = 0.5, 0.5, 0.7
-    return int(bool(x1 * w1 + x2 * w2 - theta > 0))
+    x = np.array([x1, x2])
+    w = np.array([0.5, 0.5])
+    b = -0.7
+    return int(np.sum(w * x) + b > 0)
 
 
 def main():
