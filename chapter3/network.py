@@ -29,7 +29,7 @@ def init_network():
 
 
 def indentity_function(x):
-    return x
+    return softmax(x)
 
 
 def forward(network, x):
@@ -44,6 +44,13 @@ def forward(network, x):
 
     a3 = np.dot(z2, W3) + b3
     return indentity_function(a3)
+
+
+def softmax(x):
+    c = np.max(x)
+    expx = np.exp(x - c)
+    sum_expx = np.sum(expx)
+    return expx / sum_expx
 
 
 def main():
