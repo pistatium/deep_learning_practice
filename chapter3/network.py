@@ -3,6 +3,7 @@
 import numpy as np
 
 from sigmoid import sigmoid
+from softmax import softmax
 
 
 def init_network():
@@ -44,13 +45,6 @@ def forward(network, x):
 
     a3 = np.dot(z2, W3) + b3
     return indentity_function(a3)
-
-
-def softmax(x):
-    c = np.max(x)
-    expx = np.exp(x - c)
-    sum_expx = np.sum(expx)
-    return expx / sum_expx
 
 
 def main():
