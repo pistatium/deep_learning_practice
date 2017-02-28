@@ -34,7 +34,7 @@ def predict(network, x):
     a2 = np.dot(z1, W2) + b2
     z2 = sigmoid(a2)
 
-    a3 = np.dot(a2, W3) + b3
+    a3 = np.dot(z2, W3) + b3
     return softmax(a3)
 
 
@@ -51,7 +51,7 @@ def main():
     for i in range(len(x)):
         y = predict(network, x[i])
         p = np.argmax(y)
-        expect = t[1]
+        expect = t[i]
         if p == expect:
             accuracy_cnt += 1
         else:
