@@ -9,7 +9,7 @@ from keras.layers.convolutional import Conv2D, MaxPooling2D
 from keras.layers.core import Reshape
 
 sys.path.append(os.pardir)
-from mnist import load_mnist
+from ext.mnist import load_mnist
 
 
 def main():
